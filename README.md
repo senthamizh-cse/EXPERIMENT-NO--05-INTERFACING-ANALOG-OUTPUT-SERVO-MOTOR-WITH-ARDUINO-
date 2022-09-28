@@ -53,6 +53,7 @@ CIRCUIT DIAGRAM
  ![image](https://user-images.githubusercontent.com/36288975/163544618-6eb8a7b5-7f1a-428a-8d9f-fd899b145efb.png)
 
 ### FIGURE 04 CIRCUIT DIAGRAM
+![Screenshot 2022-09-28 200309](https://user-images.githubusercontent.com/113031811/192807227-9ddad3a5-b69e-41f1-95b0-d0c6789fe76a.png)
 
 ### PROCEDURE:
 1.	Connect the circuit as per the circuit diagram 
@@ -67,13 +68,41 @@ CIRCUIT DIAGRAM
 
 
 ### PROGRAM :
- 
+ ```
+
+#include <Servo.h>
+int pos = 0;
+
+Servo servo_9;
+
+void setup()
+{
+  servo_9.attach(9, 500, 2500);
+Serial.begin(9600);  
+
+}
+
+void loop()
+{
+  for (pos = 0 ; pos <= 180 ; pos += 1)
+  {
+    servo_9.write(pos);
+    delay(1);
+	//Serial.print("Angle of Server = ");
+	Serial.println(pos);    
+    
+  }
+  for (pos = 180 ; poas >= 0 ; pos -= 1){
+    servo_9.write(pos);
+    delay(1);
+	//Serial.print("Angle of Server = ");
+	Serial.println(pos);    
+  }
+}
 
 
 
-
-
-
+```
 
 
 
